@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'offsure',
     'residential',
-    'home'
+    'home',
+    'Accounts'
 ]
 
 MIDDLEWARE = [

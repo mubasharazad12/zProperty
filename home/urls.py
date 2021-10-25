@@ -5,5 +5,4 @@ urlpatterns = [
      path('contact', views.contact, name='contact'),
      path('property-grid', views.propertyGrid, name='property-grid'),
      path('property-detail', views.propertyDetail, name='property-detail'),
-     
 ]
