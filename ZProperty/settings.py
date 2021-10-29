@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'offsure',
     'residential',
     'home',
-    'Accounts'
+    'Accounts',
+    "Agents"
 ]
 
 MIDDLEWARE = [

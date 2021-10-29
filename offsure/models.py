@@ -13,6 +13,10 @@ class OFFPlanAndInvestment(models.Model):
     Dashboard_Image = models.ImageField(upload_to="OfPlanInvesments/")
     Developer = models.CharField(max_length=200, null=True)
     Development_type = models.TextField(null=True)
+    num_bedrooms = models.CharField(max_length=100, null=True)
+    num_baths = models.CharField(max_length=100, null=True, default="1")
+    num_garage = models.CharField(max_length=100, null=True, default="1")
+    Area = models.CharField(max_length=100, null=True, default="1")
 
     def __str__(self):
         return str(self.PlanName)
@@ -20,7 +24,8 @@ class OFFPlanAndInvestment(models.Model):
 
 class OffPlanGallery(models.Model):
     plan = models.ForeignKey(OFFPlanAndInvestment, on_delete=models.CASCADE)
-    Image = models.ImageField(upload_to="OfPlanInvesments/Gallery", null =True)
+    Image = models.ImageField(upload_to="OfPlanInvesments/Gallery", null=True)
+    description = models.TextField(null=True)
 
     def __str__(self):
         return str(self.plan)

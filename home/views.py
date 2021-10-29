@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from offsure.models import OFFPlanAndInvestment, OffPlanGallery
-from residential.models import RedsidentialProperties, ResidentialPropertiesImage
+from residential.models import ResidentialProperties, ResidentialPropertiesImage
 from .models import HomeDashboardSlider
 
 
@@ -8,7 +8,7 @@ from .models import HomeDashboardSlider
 
 def index(request):
     off_plan_properties = OFFPlanAndInvestment.objects.all()[:6]
-    all_res_properties = RedsidentialProperties.objects.all()[:6]
+    all_res_properties = ResidentialProperties.objects.all()[:6]
     home_dashboard = HomeDashboardSlider.objects.all()
     context = {
         "offplan_all_properties": off_plan_properties,
@@ -23,7 +23,7 @@ def contact(request):
 
 
 def propertyGrid(request):
-    all_properties = RedsidentialProperties.objects.all()
+    all_properties = ResidentialProperties.objects.all()
     context = {
         "all_prop": all_properties
     }
