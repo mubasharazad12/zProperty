@@ -1,11 +1,21 @@
 from django.shortcuts import render
 from offsure.models import OFFPlanAndInvestment, OffPlanGallery
+from residential.models import RedsidentialProperties, ResidentialPropertiesImage
+from .models import HomeDashboardSlider
 
 
 # Create your views here.
 
 def index(request):
-    return render(request, "index.html")
+    off_plan_properties = OFFPlanAndInvestment.objects.all()[:6]
+    all_res_properties = RedsidentialProperties.objects.all()[:6]
+    home_dashboard = HomeDashboardSlider.objects.all()
+    context = {
+        "offplan_all_properties": off_plan_properties,
+        "home_dashboard": home_dashboard,
+        "all_res_properties": all_res_properties
+    }
+    return render(request, "index.html", context)
 
 
 def contact(request):
@@ -13,19 +23,10 @@ def contact(request):
 
 
 def propertyGrid(request):
-    # This is just for one Element
-    all_properties = OFFPlanAndInvestment.objects.all()
+    all_properties = RedsidentialProperties.objects.all()
     context = {
-        "demoImage": all_properties[0].Dashboard_Image,
-        "Title": all_properties[0].PlanName,
-        "OverView": all_properties[0].Overview,
-        "Price": all_properties[0].Price
+        "all_prop": all_properties
     }
-    # For All Element U Need to Loop On all_prop
-    # all_properties = OFFPlanAndInvestment.objects.all()
-    # context = {
-    #     "all_prop": all_properties
-    # }
     return render(request, "property-grid.html", context=context)
 
 
