@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from offsure.models import OFFPlanAndInvestment, OffPlanGallery
-from residential.models import ResidentialProperties, ResidentialPropertiesImage
+from residential.models import ResidentialProperties, ResidentialPropertiesImage, Amenitie
 from .models import HomeDashboardSlider
 
 
@@ -30,5 +30,15 @@ def propertyGrid(request):
     return render(request, "property-grid.html", context=context)
 
 
-def propertyDetail(request):
-    return render(request, "property-detail.html")
+def propertyDetail(request, id=0):
+    sepId = ResidentialProperties.objects.filter(id=id)[0]
+    print("[+] Model Got is ", sepId)
+    gallery = ResidentialPropertiesImage.objects.filter(property=sepId)
+    print("[+] Gallery Got is ", gallery)
+    amanities = Amenitie.objects.filter(property=sepId)
+    print("[+] Model is ", amanities)
+    context = {
+        "Gallery": gallery,
+        "Ama": amanities
+    }
+    return render(request, "property-detail.html", context)
