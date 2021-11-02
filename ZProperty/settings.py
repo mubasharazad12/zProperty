@@ -136,6 +136,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static/Media")
 # Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ENTER EMAIL'
-EMAIL_HOST_PASSWORD = 'ENTER PASSWORD'
+EMAIL_HOST_USER = 'roopch447@gmail.com'
+EMAIL_HOST_PASSWORD = 'abc*963258741'
 EMAIL_USE_TLS = True

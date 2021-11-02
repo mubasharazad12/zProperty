@@ -10,6 +10,7 @@ class Agent(models.Model):
     phone = models.CharField(max_length=100)
     profile_image = models.ImageField(upload_to="Agents/Profiles")
     description = models.TextField()
+    uploaded_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.first_name) + " " + str(self.last_name)

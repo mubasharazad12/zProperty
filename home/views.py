@@ -7,9 +7,11 @@ from .models import HomeDashboardSlider
 # Create your views here.
 
 def index(request):
-    off_plan_properties = OFFPlanAndInvestment.objects.all()[:6]
-    all_res_properties = ResidentialProperties.objects.all()[:6]
+    off_plan_properties = OFFPlanAndInvestment.objects.all().order_by('uploaded_date')
+    all_res_properties = ResidentialProperties.objects.all().order_by('uploaded_date')
     home_dashboard = HomeDashboardSlider.objects.all()
+    # print("[+] off_plan_properties are ", off_plan_properties)
+    # print("[+] residential properties are ", all_res_properties)
     context = {
         "offplan_all_properties": off_plan_properties,
         "home_dashboard": home_dashboard,

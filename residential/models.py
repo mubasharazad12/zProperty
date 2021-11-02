@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 
@@ -17,6 +19,7 @@ class ResidentialProperties(models.Model):
     video_url = models.TextField(null=True)
     property_type = models.CharField(max_length=100, null=True)
     status = models.CharField(max_length=100, null=True)
+    uploaded_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self) -> str:
         return str(self.Title)

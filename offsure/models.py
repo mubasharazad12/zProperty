@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 
@@ -17,6 +19,7 @@ class OFFPlanAndInvestment(models.Model):
     num_baths = models.CharField(max_length=100, null=True, default="1")
     num_garage = models.CharField(max_length=100, null=True, default="1")
     Area = models.CharField(max_length=100, null=True, default="1")
+    uploaded_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.PlanName)
