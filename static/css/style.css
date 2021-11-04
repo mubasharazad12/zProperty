@@ -178,7 +178,7 @@ a:hover {
 .pagination-a .pagination .page-link:hover,
 .pagination-a .pagination .page-link:active,
 .pagination-a .pagination .page-link:focus {
-  background-color: #2eca6a;
+  background-color: #1b98e0;
 }
 
 .pagination-a .pagination .page-link span {
@@ -205,11 +205,11 @@ a:hover {
 }
 
 .pagination-a .pagination .page-item.active .page-link {
-  background-color: #2eca6a;
+  background-color: #1b98e0;
 }
 
 .a {
-  color: #2eca6a;
+  color: #1b98e0;
   font-size: 1.3rem;
 }
 
@@ -970,7 +970,7 @@ a:hover {
 }
 
 .intro-single .title-single-box {
-  border-left: 3px solid #2eca6a;
+  border-left: 3px solid #000000;
 }
 
 .intro-single .title-single-box .title-single {
@@ -1427,7 +1427,7 @@ a:hover {
 }
 
 .sinse-box {
-  background-color: #2eca6a;
+  background-color: #1b98e0;
   padding: 1rem 2rem;
   position: absolute;
   left: 15px;
@@ -1643,7 +1643,7 @@ footer .credits {
 }
 
 .btn.btn-a:hover {
-  background-color: #2eca6a;
+  background-color: #1b98e0;
   color: #000000;
 }
 
