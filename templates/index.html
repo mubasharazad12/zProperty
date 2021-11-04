@@ -397,7 +397,7 @@
 <!--/ Property End /-->
 
 <!--/ Agents Star /-->
-<section class="section-agents section-t8">
+<section class="section-agents section-t8" id="agent">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -406,7 +406,7 @@
             <h2 class="title-a">Meet the Best Agents</h2>
           </div>
           <div class="title-link">
-            <a href="agents-grid.html">All Agents
+            <a href="{% url 'agents' %}">All Agents
               <span class="ion-ios-arrow-forward"></span>
             </a>
           </div>
@@ -603,7 +603,7 @@
 <!--/ Agents End /-->
 
 <!--/ News Star /-->
-<section class="section-news section-t8">
+<section class="section-news section-t8" id="news">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -611,11 +611,7 @@
           <div class="title-box">
             <h2 class="title-a">Latest Property & Community News</h2>
           </div>
-          <div class="title-link">
-            <a href="blog-grid.html">All News
-              <span class="ion-ios-arrow-forward"></span>
-            </a>
-          </div>
+         
         </div>
       </div>
     </div>

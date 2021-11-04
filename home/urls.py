@@ -5,4 +5,6 @@ urlpatterns = [
      path('contact', views.contact, name='contact'),
      path('property-grid', views.propertyGrid, name='property-grid'),
      path('property-detail/<int:id>', views.propertyDetail, name='property-detail'),
+     path('about', views.about, name='about'),
+     path('agents', views.agents, name='agents'),
 ]

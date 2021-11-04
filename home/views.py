@@ -44,3 +44,10 @@ def propertyDetail(request, id=0):
         "Ama": amanities
     }
     return render(request, "property-detail.html", context)
+
+
+def about(request):
+    return render(request, "about.html")
+
+def agents(request):
+    return render(request, "agents.html")
