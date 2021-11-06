@@ -88,7 +88,7 @@
             <span></span>
             <span></span>
         </button>
-        <a class="navbar-brand text-brand" href="index.html">Z<span class="color-b">Properties</span></a>
+        <a class="navbar-brand text-brand" href={% url 'index' %}>Z<span class="color-b">Properties</span></a>
         <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none"
                 data-toggle="collapse"
                 data-target="#navbarTogglerDemo01" aria-expanded="false">
@@ -126,7 +126,7 @@
                         Property
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Off Plan Properties</a>
+                        <a class="dropdown-item" href="{% url 'offplan' %}">Off Plan Properties</a>
                         <a class="dropdown-item" href="{% url 'property-grid' %}">Residental Properties</a>
                         {% comment %} <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
                         <a class="dropdown-item" href="agent-single.html">Agent Single</a> {% endcomment %}

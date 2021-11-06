@@ -51,3 +51,13 @@ def about(request):
 
 def agents(request):
     return render(request, "agents.html")
+
+
+
+def offplan(request):
+    
+    return render(request, "off-plan.html",)
+
+def offplandetail(request):
+    
+    return render(request, "off-plan-detail.html",)
