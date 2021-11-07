@@ -1,9 +1,6 @@
 import datetime
 
 from django.db import models
-import os
-
-
 # Create your models here.
 
 
@@ -11,9 +8,11 @@ class ResidentialProperties(models.Model):
     Title = models.CharField(max_length=100)
     overview = models.TextField()
     Dashboard_Image = models.ImageField(upload_to="ResidentialInvesment", null=True)
+    flowPlan_Image = models.ImageField(upload_to="ResidentialInvesment/flowPlan", null=True)
     Price = models.CharField(max_length=100)
     Area = models.CharField(max_length=100)
     Location = models.CharField(max_length=100)
+    locationFrame = models.TextField(null=True, blank=True)
     num_bedRooms = models.CharField(max_length=100)
     num_WashRooms = models.CharField(max_length=100)
     num_Garage = models.CharField(max_length=100, null=True)
