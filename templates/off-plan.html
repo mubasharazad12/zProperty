@@ -35,7 +35,7 @@
 <!--/ Intro Single End /-->
 
 <!--/ Property Grid Star /-->
-<section class="property-grid grid">
+ {% comment %} <section class="property-grid grid">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            {% endfor %}  {% endcomment %}
             <!--        <div class="col-md-4">-->
             <!--          <div class="card-box-a card-shadow">-->
             <!--            <div class="img-box-a">-->
@@ -335,7 +335,7 @@
             <!--          </div>-->
             <!--        </div>-->
             <!--      </div>-->
-            <div class="row">
+            {% comment %} <div class="row">
                 <div class="col-sm-12">
                     <nav class="pagination-a">
                         <ul class="pagination justify-content-end">
@@ -365,10 +365,50 @@
         </div>
     </div>
 </section>
-<!--/ Property Grid End /-->
+<!--/ Property Grid End /--> {% endcomment %}
+<div class="off-plan-grid ">
+
+    {% for property in plans_list %}
+<div class="big">
+	 <article class="recipe">
+		<div class="pizza-box">
+			<img src="{{property.Dashboard_Image.url}}" width="1500" height="1368" alt="">
+		</div>
+		<div class="recipe-content">
+			<p class="recipe-tags">
+				<span class="recipe-tag"></span>
+				<span class="recipe-tag">rent | $ {{property.Price}}</span>
+			</p>
+
+			<h1 class="recipe-title"><a href="{% url 'offplandetail' property.id %}">{{property.PlanName}}</a></h1>
+
+			<p class="recipe-metadata">
+				<span class="recipe-rating"><span>{{property.Area}}</span></span>
+				<span class="recipe-votes">{{property.num_bedRooms}}</span>
+                <span class="recipe-votes"> {{property.num_WashRooms}}</span>
+               
+			</p>
+
+			<p class="recipe-desc">{{property.Overview}}</p>
+
+			<button class="recipe-save" type="button">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000"><path d="M 6.0097656 2 C 4.9143111 2 4.0097656 2.9025988 4.0097656 3.9980469 L 4 22 L 12 19 L 20 22 L 20 20.556641 L 20 4 C 20 2.9069372 19.093063 2 18 2 L 6.0097656 2 z M 6.0097656 4 L 18 4 L 18 19.113281 L 12 16.863281 L 6.0019531 19.113281 L 6.0097656 4 z" fill="currentColor"/></svg>
+				Save
+                <a href="{% url 'offplandetail' property.id %}">
+			</button>
+
+		</div>
+	</article>
+</div>
+{% endfor %}
+
+
+</div>
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <div id="preloader"></div>
+
+
 
 
 {% endblock body %}

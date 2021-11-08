@@ -17,7 +17,7 @@
         <div class="col-sm-12 section-t8">
         
                <h2 class="register-h2"> Login Yourself! </h2>
-              <form class="form-a contactForm" method="POST" action="{% url 'login' %}" role="form">
+              <form class="form-a contactForm-register" method="POST" action="{% url 'login' %}" role="form">
                 {% csrf_token %}
                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                 <div id="errormessage"></div>
