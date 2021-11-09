@@ -55,7 +55,6 @@
               <div class="property-price d-flex justify-content-center foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
-                    <span class="ion-money">$</span>
                   </div>
                   <div class="card-title-c align-self-center">
                     <h5 class="title-c">{{plan.Price}}</h5>
@@ -132,7 +131,7 @@
               <div class="amenities-list color-text-a">
                 <ul class="list-a no-margin">
                   {% for am in Ama %}
-                  <li> am.name </li>
+                  <li> {{am.name}} </li>
                   {% endfor %}
                 </ul>
               </div>
@@ -160,7 +159,7 @@
                 webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
             <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-              <img src="{% static 'img/plan2.jpg' %}" alt="" class="img-fluid">
+              <img src="{{plan.flowPlan_Image.url}}" alt="" class="img-fluid">
             </div>
             <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
               {{plan.locationFrame|safe}}

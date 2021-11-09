@@ -1,15 +1,15 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 # Create your models here.
 
-
 class Question(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=100, null=True, blank=True)
+    last_name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.CharField(max_length=100, null=True, blank=True)
+    phone = models.CharField(max_length=100, null=True, blank=True)
+    posted_date = models.DateTimeField(auto_now=True)
+    Subject = models.CharField(max_length=100, null=True, blank=True)
     Question = models.TextField(null=True)
-
-
-class Answers(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    answer = models.TextField(null=True)
+    property_title = models.CharField(max_length=100, null=True, blank=True)
+    property_id = models.CharField(max_length=100, null=True, blank=True)
