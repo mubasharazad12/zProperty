@@ -1,11 +1,15 @@
  <!-- Footer Start -->
+ {% load static %}
     <section class="section-footer">
     <div class="container">
         <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="widget-a">
             <div class="w-header-a">
-                <h3 class="w-title-a text-brand">Logo Here</h3>
+        <a class="navbar-brand text-brand" href={% url 'index' %}>
+        
+        <img src="{% static 'img/logo/mainlogo1.png' %}" width="160px" alt="logo">
+        </a>
             </div>
             <div class="w-body-a">
             </div>

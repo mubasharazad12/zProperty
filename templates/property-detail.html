@@ -12,7 +12,7 @@
   <section class="intro-single">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 col-lg-8">
+        <div class="col-md-12 col-lg-8  wow fadeInDownBig">
           <div class="title-single-box">
             <h1 class="title-single">{{plan.Title}}</h1>
             <span class="color-text-a">{{plan.Location}}</span>
@@ -39,11 +39,11 @@
   <!--/ Intro Single End /-->
 
   <!--/ Property Single Star /-->
-  <section class="property-single nav-arrow-b">
+  <section class="property-single nav-arrow-b "  >
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
-          <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+        <div class="col-sm-12 ">
+          <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property wow fadeIn">
             {% for img in Gallery %}
             <div class="carousel-item-b carousel-detail">
               <img src="{{img.Image.url}}" alt="">
@@ -51,12 +51,12 @@
             {% endfor %}
           </div>
           <div class="row justify-content-between">
-            <div class="col-md-5 col-lg-4">
-              <div class="property-price d-flex justify-content-center foo">
+            <div class="col-md-5 col-lg-4 ">
+              <div class="property-price d-flex justify-content-center foo wow fadeInLeftBig">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
                   </div>
-                  <div class="card-title-c align-self-center">
+                  <div class="card-title-c align-self-center wow fadeInLeft">
                     <h5 class="title-c">{{plan.Price}}</h5>
                   </div>
                 </div>
@@ -64,12 +64,12 @@
               <div class="property-summary">
                 <div class="row">
                   <div class="col-sm-12">
-                    <div class="title-box-d section-t4">
+                    <div class="title-box-d section-t4 wow fadeInLeft">
                       <h3 class="title-d">Quick Summary</h3>
                     </div>
                   </div>
                 </div>
-                <div class="summary-list">
+                <div class="summary-list wow fadeInLeft">
                   <ul class="list">
                     <li class="d-flex justify-content-between">
                       <strong>Property ID:</strong>
@@ -108,7 +108,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-7 col-lg-7 section-md-t3">
+            <div class="col-md-7 col-lg-7 section-md-t3 wow fadeInRight">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d">
@@ -138,7 +138,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-10 offset-md-1">
+        <div class="col-md-10 offset-md-1 wow fadeInUpBig">
           <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
@@ -159,14 +159,14 @@
                 webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
             <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-              <img src="{{plan.flowPlan_Image.url}}" alt="" class="img-fluid">
+              <img width="100%" height="500px" src="{{plan.flowPlan_Image.url}}" alt="" >
             </div>
             <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
               {{plan.locationFrame|safe}}
             </div>
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 wow fadeInUpBig">
           <div class="row section-t3">
             <div class="col-sm-12">
               <div class="title-box-d">

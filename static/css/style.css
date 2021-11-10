@@ -131,6 +131,7 @@ a:hover {
 }
 .img-box-a img{
   height: 400px;
+  width: 100%;
 }
 .card-img-d img {
   height: 400px;
@@ -525,7 +526,9 @@ a:hover {
 /*======================================
 //--//-->   NAVBAR
 ======================================*/
-
+.header-width{
+  height: 80px;
+}
 .navbar-default {
   transition: all .5s ease-in-out;
   background-color: #00000096;
@@ -964,9 +967,14 @@ a:hover {
 
 .intro .intro-subtitle.intro-price {
   padding-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 0.4rem;
 }
-
+@media (min-width: 380px) {
+  .intro .intro-subtitle.intro-price {
+    padding-top: 1rem;
+    font-size: 0.6rem;
+  }
+}
 /*------/ Intro Single /------*/
 
 .intro-single {
@@ -983,7 +991,7 @@ a:hover {
 
 .intro-single .title-single-box .title-single {
   font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .intro-single .breadcrumb-box {
@@ -1064,7 +1072,9 @@ a:hover {
   margin-bottom: 0;
   padding-bottom: .7rem;
 }
-
+.card-header-a .card-title-a {
+  font-size: 1.2rem;
+}
 .card-header-a .card-title-a a {
   color: #ffffff;
   text-decoration: none;
@@ -1699,7 +1709,7 @@ footer .credits {
   }
 
   .intro .intro-subtitle.intro-price {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
 
   .about-img-box {
@@ -1773,11 +1783,11 @@ footer .credits {
 
   .intro .intro-subtitle.intro-price {
     padding-top: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .intro-single .title-single-box .title-single {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
 
   .grid .card-box-a,
@@ -1813,7 +1823,7 @@ footer .credits {
   }
 
   .card-header-a .card-title-a {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
 
   .card-info .card-info-title {
@@ -1917,7 +1927,7 @@ footer .credits {
   }
 
   .intro-single .title-single-box .title-single {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
 
   .card-box-a .price-a,
@@ -1930,7 +1940,7 @@ footer .credits {
   }
 
   .card-header-a .card-title-a {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 
   .card-info .card-info-title {
@@ -2079,6 +2089,7 @@ footer .credits {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 .pizza-box {
   /* flex: 3 1 30ch;
@@ -2096,13 +2107,22 @@ footer .credits {
   height: 400px;
 }
 .recipe {
-  border: 2px solid #f2f2f2;
+  border: 3px solid #f2f2f2;
   border-radius: 8px;
   overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+.recipe:hover{
+  
+  box-shadow: -1px 0px 16px 2px rgba(27,152,224,0.66);
+  -webkit-box-shadow: -1px 0px 16px 2px rgba(27,152,224,0.66);
+  -moz-box-shadow: -1px 0px 16px 2px rgba(27,152,224,0.66);
+  
 }
 .recipe-content {
   padding: 16px 32px;
   flex: 4 1 40ch;
+  max-width: 500px;
 }
 .recipe-tags {
   margin: 0 -8px;
@@ -2155,13 +2175,10 @@ footer .credits {
 .recipe-save svg {
   margin-right: 6px;
 }
-/* Body Layout */
-* {
-  box-sizing: border-box;
-}
+
 .off-plan-grid {
-  --primary: #e05d26;
-  --grey: #454545;
+
+
   --lightgrey: #666;
   color: var(--grey);
   line-height: 1.55;
@@ -2178,3 +2195,478 @@ footer .credits {
   width: clamp(320px, 35%, 480px);
   padding: 24px;
 }
+
+
+
+/* Special button */
+/* credit freefontend.com */
+.btn-challenge a{
+  color: white;
+}
+ .btn-challenge {
+	 color: white;
+	 font-family: inherit;
+	 font-size: inherit;
+	 font-weight: bold;
+	 background-color: #1b98e0;
+	 width: 195px;
+	 height: 60px;
+	 padding: 0;
+	 border: 0;
+	 margin: 0;
+	 outline: 0;
+	 flex-grow: 0;
+	 flex-shrink: 0;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 flex-direction: column;
+	 border-radius: 12px;
+	 position: relative;
+	 transition: background-color 180ms ease-out;
+}
+ .btn-challenge > small {
+	 color: #a496a4;
+	 font-size: 0.6em;
+	 font-weight: normal;
+}
+ .btn-challenge:hover {
+	 background-color: black;
+}
+ .btn-challenge:active, .btn-challenge:hover:active {
+	 background-color:black;
+}
+ .hover-area {
+	 width: 195px;
+	 height: 75px;
+	 display: grid;
+	 grid-template-columns: repeat(13, 15px);
+	 grid-template-rows: repeat(5, 15px);
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 perspective: 500px;
+}
+ .hover-area .hover-col {
+	 z-index: 1;
+}
+ .hover-area .hover-col:nth-child(1):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(-90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(2):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(-75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(3):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(-60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(4):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(-45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(5):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(-30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(6):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(-15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(7):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(0deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(8):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(9):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(10):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(11):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(12):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(13):hover ~ .icon-home {
+	 transform: scale(1) rotateX(45deg) rotateY(90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(14):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(-90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(15):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(-75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(16):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(-60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(17):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(-45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(18):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(-30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(19):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(-15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(20):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(0deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(21):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(22):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(23):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(24):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(25):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(26):hover ~ .icon-home {
+	 transform: scale(1) rotateX(22.5deg) rotateY(90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(27):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(-90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(28):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(-75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(29):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(-60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(30):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(-45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(31):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(-30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(32):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(-15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(33):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(0deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(34):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(35):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(36):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(37):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(38):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(39):hover ~ .icon-home {
+	 transform: scale(1) rotateX(0deg) rotateY(90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(40):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(-90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(41):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(-75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(42):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(-60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(43):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(-45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(44):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(-30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(45):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(-15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(46):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(0deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(47):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(48):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(49):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(50):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(51):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(52):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-22.5deg) rotateY(90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(53):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(-90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(54):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(-75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(55):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(-60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(56):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(-45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(57):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(-30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(58):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(-15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(59):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(0deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(60):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(15deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(61):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(30deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(62):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(45deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(63):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(60deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(64):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(75deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .hover-col:nth-child(65):hover ~ .icon-home {
+	 transform: scale(1) rotateX(-45deg) rotateY(90deg);
+	 transition: transform 380ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .hover-area .icon-home {
+	 width: 80px;
+	 height: 80px;
+	 position: absolute;
+	 bottom: 91px;
+	 left: calc(50% - 40px);
+	 transform-origin: bottom center;
+	 transform-style: preserve-3d;
+	 transform: scale(0);
+	 transition: transform 225ms ease-out;
+}
+ .hover-area .icon-home .roof {
+	 height: 90px;
+	 position: absolute;
+	 left: 50%;
+	 transform-origin: bottom center;
+	 transform-style: preserve-3d;
+	 transform: translateZ(45px) rotateX(90deg);
+}
+ .hover-area .icon-home .roof.roof.roof-1 {
+	 top: -90px;
+}
+ .hover-area .icon-home .roof.roof.roof-2 {
+	 top: -110px;
+}
+ .hover-area .icon-home .roof:before, .hover-area .icon-home .roof:after {
+	 content: '';
+	 background-color: black;
+	 width: 70px;
+	 height: 100%;
+	 position: absolute;
+	 top: 0;
+	 transform-style: preserve-3d;
+}
+ .hover-area .icon-home .roof:before {
+	 right: 0;
+	 transform-origin: bottom right;
+	 transform: rotateY(-37.5deg);
+	 filter: brightness(105%);
+}
+ .hover-area .icon-home .roof:after {
+	 left: 0;
+	 transform-origin: bottom left;
+	 transform: rotateY(37.5deg);
+	 filter: brightness(95%);
+}
+ .hover-area .icon-home .roof-design {
+	 height: 20px;
+	 position: absolute;
+	 top: -20px;
+	 left: 50%;
+	 transform-style: preserve-3d;
+}
+ .hover-area .icon-home .roof-design.roof-design-1 {
+	 transform: translateZ(45px);
+}
+ .hover-area .icon-home .roof-design.roof-design-2 {
+	 transform: translateZ(-45px);
+}
+ .hover-area .icon-home .roof-design:before, .hover-area .icon-home .roof-design:after {
+	 content: '';
+	 background-color: black;
+	 width: 55px;
+	 height: 20px;
+	 position: absolute;
+	 top: 0;
+	 transform-style: preserve-3d;
+}
+ .hover-area .icon-home .roof-design:before {
+	 right: 0;
+	 transform-origin: bottom right;
+	 transform: skewY(-37.5deg);
+}
+ .hover-area .icon-home .roof-design:after {
+	 left: 0;
+	 transform-origin: bottom left;
+	 transform: skewY(37.5deg);
+}
+ .hover-area .icon-home .roof-side {
+	 background-color: black;
+	 width: 90px;
+	 height: 20px;
+	 position: absolute;
+	 top: 22px;
+	 transform-origin: top left;
+	 transform-style: preserve-3d;
+	 transform: translateZ(45px) rotateY(90deg);
+}
+ .hover-area .icon-home .roof-side.roof-side-1 {
+	 left: -15px;
+	 filter: brightness(105%);
+}
+ .hover-area .icon-home .roof-side.roof-side-2 {
+	 right: -105px;
+	 filter: brightness(95%);
+}
+ .hover-area .icon-home .roof-wall {
+	 border-top: none;
+	 border-bottom: solid 31px #a5a7bb;
+	 border-left: solid 40px transparent;
+	 border-right: solid 40px transparent;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 transform-style: preserve-3d;
+}
+ .hover-area .icon-home .roof-wall.roof-wall-1 {
+	 transform: translateZ(40px);
+}
+ .hover-area .icon-home .roof-wall.roof-wall-2 {
+	 transform: translateZ(-40px);
+}
+ .hover-area .icon-home .wall {
+	 background-color: #a5a7bb;
+	 width: 81px;
+	 height: 50px;
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 transform-origin: center;
+	 transform-style: preserve-3d;
+}
+ .hover-area .icon-home .wall.wall-1 {
+	 transform: translateZ(40px);
+}
+ .hover-area .icon-home .wall.wall-2 {
+	 transform: translateZ(-40px);
+	 filter: brightness(90%);
+}
+ .hover-area .icon-home .wall.wall-3 {
+	 transform: rotateY(90deg) translateZ(-40px);
+	 filter: brightness(105%);
+}
+ .hover-area .icon-home .wall.wall-4 {
+	 transform: rotateY(90deg) translateZ(40px);
+	 filter: brightness(95%);
+}
+ .hover-area .icon-home .door {
+	 background-color: #a496a4;
+	 width: 30px;
+	 height: 40px;
+	 position: absolute;
+	 bottom: 0;
+	 left: calc(50% - 15px);
+	 transform-style: preserve-3d;
+	 transform: translateZ(40px);
+}
+ .hover-area .icon-home .floor {
+	 background-color: #a5a7bb;
+	 width: 81px;
+	 height: 81px;
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 transform-origin: center;
+	 transform-style: preserve-3d;
+	 transform: rotateX(90deg) translateZ(-40px) scale(1.01);
+	 filter: brightness(90%);
+}
+ 
