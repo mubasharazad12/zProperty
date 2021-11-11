@@ -11,5 +11,15 @@ class Question(models.Model):
     posted_date = models.DateTimeField(auto_now=True)
     Subject = models.CharField(max_length=100, null=True, blank=True)
     Question = models.TextField(null=True)
-    property_title = models.CharField(max_length=100, null=True, blank=True)
-    property_id = models.CharField(max_length=100, null=True, blank=True)
+
+
+class PropertyInquiry(models.Model):
+    first_name = models.CharField(max_length=100, null=True, blank=True)
+    last_name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.CharField(max_length=100, null=True, blank=True)
+    phone = models.CharField(max_length=100, null=True, blank=True)
+    posted_date = models.DateTimeField(auto_now=True)
+    Subject = models.CharField(max_length=100, null=True, blank=True)
+    Question = models.TextField(null=True)
+    property_type = models.CharField(max_length=100, null=True, blank=True)
+    property_name = models.CharField(max_length=100, null=True, blank=True)
