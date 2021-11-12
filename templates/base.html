@@ -41,6 +41,7 @@
               new WOW().init();
             </script>
 
+
 </head>
 <body>
 
@@ -75,6 +76,13 @@
 
   <!-- Template Main Javascript File -->
   <script src="{% static 'js/app.js' %}"></script>
+            <script>
 
+{% comment %} $(function() {
+  $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+}); {% endcomment %}
+
+
+</script>
 {% endblock javascript %}
 </html>
