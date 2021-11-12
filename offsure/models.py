@@ -10,6 +10,7 @@ class OFFPlanAndInvestment(models.Model):
     PlanName = models.CharField(max_length=200)
     Overview = models.TextField()
     Location = models.CharField(max_length=200)
+    LocationFrame = models.TextField(null=True, blank=True)
     Price = models.CharField(max_length=100)
     Completion_date = models.DateField()
     Dashboard_Image = models.ImageField(upload_to="OfPlanInvesments/")
@@ -34,6 +35,11 @@ class OffPlanGallery(models.Model):
         return str(self.plan)
 
 
+class Amenitie(models.Model):
+    property = models.ForeignKey(OFFPlanAndInvestment, models.CASCADE)
+    name = models.CharField(max_length=100)
+
+
 class PaymentPlans(models.Model):
     plan = models.ForeignKey(OFFPlanAndInvestment, on_delete=models.CASCADE)
     Instalment_name = models.CharField(max_length=100, null=True)
@@ -41,3 +47,9 @@ class PaymentPlans(models.Model):
 
     def __str__(self):
         return str(self.plan)
+
+
+class InvestmentPlans(models.Model):
+    plan = models.ForeignKey(OFFPlanAndInvestment, on_delete=models.CASCADE)
+    investmentPlan = models.CharField(max_length=100, null=True, blank=True)
+    investmentDetails = models.TextField(null=True, blank=True)

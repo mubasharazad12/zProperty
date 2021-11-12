@@ -14,8 +14,8 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">{{plan.Title}}</h1>
-            <span class="color-text-a">{{plan.Location}}</span>
+            <h1 class="title-single">{{plan_detail.PlanName}}</h1>
+            <span class="color-text-a">{{plan_detail.Location}}</span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -44,7 +44,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
-            {% for img in Gallery %}
+            {% for img in Galleries %}
             <div class="carousel-item-b carousel-detail">
               <img src="{{img.Image.url}}" alt="">
             </div>
@@ -58,7 +58,7 @@
                     <span class="ion-money">$</span>
                   </div>
                   <div class="card-title-c align-self-center">
-                    <h5 class="title-c">{{plan.Price}}</h5>
+                    <h5 class="title-c">{{plan_detail.Price}}</h5>
                   </div>
                 </div>
               </div>
@@ -74,36 +74,41 @@
                   <ul class="list">
                     <li class="d-flex justify-content-between">
                       <strong>Property ID:</strong>
-                      <span>{{plan.id}}</span>
+                      <span>{{plan_detail.id}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Location:</strong>
-                      <span>{{plan.Location}}</span>
+                      <span>{{plan_detail.Location}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Property Type:</strong>
-                      <span>{{plan.property_type}}</span>
+                      <strong>Development Type:</strong>
+                      <span>{{plan_detail.Development_type}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Status:</strong>
-                      <span>{{plan.status}}</span>
+                      <strong>Developer </strong>
+                      <span>{{plan_detail.Developer}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Area:</strong>
-                      <span>{{plan.Area}}
+                      <span>{{plan_detail.Area}}
+                      </span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Completion date</strong>
+                      <span>{{plan_detail.Completion_date}}
                       </span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Beds:</strong>
-                      <span>{{plan.num_bedRooms}}</span>
+                      <span>{{plan_detail.num_bedrooms}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Baths:</strong>
-                      <span>{{plan.num_WashRooms}}</span>
+                      <span>{{plan_detail.num_baths}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Garage:</strong>
-                      <span>{{plan.num_Garage}}</span>
+                      <span>{{plan_detail.num_garage}}</span>
                     </li>
                   </ul>
                 </div>
@@ -119,7 +124,7 @@
               </div>
               <div class="property-description">
                 <p class="description color-text-a">
-                  {{plan.overview}}
+                  {{plan_detail.Overview}}
                 </p>
               </div>
               <div class="row section-t3">
@@ -131,8 +136,8 @@
               </div>
               <div class="amenities-list color-text-a">
                 <ul class="list-a no-margin">
-                  {% for am in Ama %}
-                  <li> am.name </li>
+                  {% for am in amentites %}
+                  <li> {{am.name}} </li>
                   {% endfor %}
                 </ul>
               </div>

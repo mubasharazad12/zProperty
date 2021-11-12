@@ -11,15 +11,11 @@ class CreateUserForm(UserCreationForm):
 
 
 class QuestionForm(forms.ModelForm):
-    
-    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "First Name"
+        "placeholder": "Full Name"
     }))
-    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Last Name"
-    }))
+
     email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Email"
@@ -28,7 +24,7 @@ class QuestionForm(forms.ModelForm):
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Phone#"
     }))
-    
+
     Subject = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Subject"
@@ -37,20 +33,16 @@ class QuestionForm(forms.ModelForm):
         "class": "form-control",
         "placeholder": "Message"
     }))
+
     class Meta:
         model = Question
-        fields = ["first_name", "last_name", "email", "phone", "Subject", "Question"]
-
+        fields = ["name", "email", "phone", "Subject", "Question"]
 
 
 class PropertyInquiryForm(forms.ModelForm):
-    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "First Name"
-    }))
-    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Last Name"
+        "placeholder": "Full Name"
     }))
     email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
@@ -60,7 +52,6 @@ class PropertyInquiryForm(forms.ModelForm):
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Phone#"
     }))
-    
     Subject = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Subject"
@@ -69,7 +60,7 @@ class PropertyInquiryForm(forms.ModelForm):
         "class": "form-control",
         "placeholder": "Message"
     }))
-    
+
     class Meta:
         model = PropertyInquiry
-        fields = ["first_name", "last_name", "email", "phone", "Subject", "Question"]
+        fields = ["name", "email", "phone", "Subject", "Question"]

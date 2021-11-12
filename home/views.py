@@ -34,4 +34,8 @@ def contact(request):
 
 
 def about(request):
-    return render(request, "about.html")
+    agents = Agent.objects.all()
+    context = {
+        "agents": agents
+    }
+    return render(request, "about.html", context)

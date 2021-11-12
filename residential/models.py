@@ -1,6 +1,8 @@
 import datetime
 
 from django.db import models
+
+
 # Create your models here.
 
 
@@ -37,3 +39,18 @@ class ResidentialPropertiesImage(models.Model):
 class Amenitie(models.Model):
     property = models.ForeignKey(ResidentialProperties, models.CASCADE)
     name = models.CharField(max_length=100)
+
+
+class PaymentPlans(models.Model):
+    plan = models.ForeignKey(ResidentialProperties, on_delete=models.CASCADE)
+    Instalment_name = models.CharField(max_length=100, null=True)
+    Installment_date = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return str(self.plan)
+
+
+class InvestmentPlans(models.Model):
+    plan = models.ForeignKey(ResidentialProperties, on_delete=models.CASCADE)
+    investmentPlan = models.CharField(max_length=100, null=True, blank=True)
+    investmentDetails = models.TextField(null=True, blank=True)
