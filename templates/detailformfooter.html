@@ -109,7 +109,25 @@
 </div>
 </section>
 <!--/ Property Single End /-->
+{% if paymentPlans %}
+<section>
+  <h3> payment Plans </h3>
+  {% for plans in paymentPlans %}
+  {{plans.Instalment_name}}<br>
+  {{plans.Installment_date}} <br>
+  {% endfor %}
+</section>
+{% endif %}
 
+{% if invesments %}
+<sectio>
+  <h3> Invesments Plan</h3>
+  {% for plans in invesments %}
+  {{plans.investmentPlan}} <br>
+  {{plans.investmentDetails}}<br>
+  {% endfor %}
+</sectio>
+{% endif %}
 
 <div class="inquiry-section">
   <div class="inquiry-section1">
