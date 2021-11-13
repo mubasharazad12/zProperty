@@ -36,6 +36,6 @@ def offplandetail(request, planid):
         "invesments": invesmentPlans,
         "paymentPlans": paymentPlans,
         "amentites": amentites,
-        "form": form
+        "formData": form
     }
     return render(request, "off-plan-detail.html", context=context)

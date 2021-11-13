@@ -1,0 +1,28 @@
+{% load static %}
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">{{plan_detail.Title}}</h1>
+                    <span class="color-text-a">{{plan_detail.Location}}</span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="property-grid.html">Properties</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            304 Blaster Up
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>

@@ -369,124 +369,234 @@
 <div class="off-plan-grid ">
 
     {% for property in plans_list %}
-<div class="big wow fadeInLeftBig">
-	 <article class="recipe">
-		<div class="pizza-box">
-			<img src="{{property.Dashboard_Image.url}}" width="1500" height="1368" alt="">
-		</div>
-		<div class="recipe-content">
-			<p class="recipe-tags">
-				<span class="recipe-tag">data :</span>
-				<span class="recipe-tag">rent | $ {{property.Price}}</span>
-			</p>
 
-			<h1 class="recipe-title"><a href="{% url 'offplandetail' property.id %}">{{property.PlanName}}</a></h1>
+    {% if forloop.counter|divisibleby:2 %}
 
-			<p class="recipe-metadata">
-				<span class="recipe-rating"><span>{{property.Area}}</span></span>
-				<span class="recipe-votes">{{property.num_bedRooms}}</span>
-                <span class="recipe-votes"> {{property.num_WashRooms}}</span>
-               
-			</p>
+    <div class="big wow fadeInLeftBig">
+        <article class="recipe">
+            <div class="pizza-box">
+                <img src="{{property.Dashboard_Image.url}}" width="1500" height="1368" alt="">
+            </div>
+            <div class="recipe-content">
+                <p class="recipe-tags">
+                    <span class="recipe-tag">data :</span>
+                    <span class="recipe-tag">rent | $ {{property.Price}}</span>
+                </p>
+                <h1 class="recipe-title"><a href="{% url 'offplandetail' property.id %}">{{property.Title}}</a></h1>
+                <p class="recipe-metadata">
+                    <span class="recipe-rating"><span>{{property.Area}}</span></span>
+                    <span class="recipe-votes">{{property.num_bedRooms}}</span>
+                    <span class="recipe-votes"> {{property.num_WashRooms}}</span>
+                </p>
+                <p class="recipe-desc">{{property.overview|truncatechars:200 }}</p>
+                <button class="btn-challenge">
+                    <a href="{% url 'offplandetail' property.id %}">	Click Here For Details
+                        <div class="hover-area">
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="hover-col"></div>
+                            <div class="icon-home">
+                                <div class="roof roof-1"></div>
+                                <div class="roof roof-2"></div>
+                                <div class="roof-design roof-design-1"></div>
+                                <div class="roof-design roof-design-2"></div>
+                                <div class="roof-side roof-side-1"></div>
+                                <div class="roof-side roof-side-2"></div>
+                                <div class="roof-wall roof-wall-1"></div>
+                                <div class="roof-wall roof-wall-2"></div>
+                                <div class="wall wall-1"></div>
+                                <div class="wall wall-2"></div>
+                                <div class="wall wall-3"></div>
+                                <div class="wall wall-4"></div>
+                                <div class="door"></div>
+                                <div class="floor"></div>
 
-			<p class="recipe-desc">{{property.Overview|truncatechars:200 }}</p>
+                            </div>
+                        </div>
 
-		
-<button class="btn-challenge">
- <a href="{% url 'offplandetail' property.id %}">	Click Here For Details
-    <div class="hover-area">
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="icon-home">
-            <div class="roof roof-1"></div>
-            <div class="roof roof-2"></div>
-            <div class="roof-design roof-design-1"></div>
-            <div class="roof-design roof-design-2"></div>
-            <div class="roof-side roof-side-1"></div>
-            <div class="roof-side roof-side-2"></div>
-            <div class="roof-wall roof-wall-1"></div>
-            <div class="roof-wall roof-wall-2"></div>
-            <div class="wall wall-1"></div>
-            <div class="wall wall-2"></div>
-            <div class="wall wall-3"></div>
-            <div class="wall wall-4"></div>
-            <div class="door"></div>
-            <div class="floor"></div>
-            
-        </div>
+                </button>
+
+            </div>
+        </article>
     </div>
-    
-</button>
 
-		</div>
-	</article>
-</div>
+    {% else %}
+
+
+                        <div class="big wow fadeInRightBig">
+                            <article class="recipe">
+                                <div class="pizza-box">
+                                    <img src="{{property.Dashboard_Image.url}}" width="1500" height="1368" alt="">
+                                </div>
+                                <div class="recipe-content">
+                                    <p class="recipe-tags">
+                                        <span class="recipe-tag">data :</span>
+                                        <span class="recipe-tag">rent | $ {{property.Price}}</span>
+                                    </p>
+                                    <h1 class="recipe-title"><a href="{% url 'offplandetail' property.id %}">{{property.Title}}</a></h1>
+                                    <p class="recipe-metadata">
+                                        <span class="recipe-rating"><span>{{property.Area}}</span></span>
+                                        <span class="recipe-votes">{{property.num_bedRooms}}</span>
+                                        <span class="recipe-votes"> {{property.num_WashRooms}}</span>
+                                    </p>
+                                    <p class="recipe-desc">{{property.overview|truncatechars:200 }}</p>
+                                    <button class="btn-challenge">
+                                        <a href="{% url 'offplandetail' property.id %}">	Click Here For Details
+                                            <div class="hover-area">
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="hover-col"></div>
+                                                <div class="icon-home">
+                                                    <div class="roof roof-1"></div>
+                                                    <div class="roof roof-2"></div>
+                                                    <div class="roof-design roof-design-1"></div>
+                                                    <div class="roof-design roof-design-2"></div>
+                                                    <div class="roof-side roof-side-1"></div>
+                                                    <div class="roof-side roof-side-2"></div>
+                                                    <div class="roof-wall roof-wall-1"></div>
+                                                    <div class="roof-wall roof-wall-2"></div>
+                                                    <div class="wall wall-1"></div>
+                                                    <div class="wall wall-2"></div>
+                                                    <div class="wall wall-3"></div>
+                                                    <div class="wall wall-4"></div>
+                                                    <div class="door"></div>
+                                                    <div class="floor"></div>
+
+                                                </div>
+                                            </div>
+
+                                    </button>
+
+                                </div>
+                            </article>
+                        </div>
+    {% endif %}
+
 {% endfor %}
-
-
 </div>
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

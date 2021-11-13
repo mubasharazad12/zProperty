@@ -26,9 +26,9 @@ def propertyDetail(request, id=0):
             return redirect('property-detail', id)
     form = PropertyInquiryForm()
     context = {
-        "plan": plan,
-        "Gallery": gallery,
-        "Ama": amanities,
+        "plan_detail": plan,
+        "Galleries": gallery,
+        "amentites": amanities,
         "formData": form
     }
     return render(request, "property-detail.html", context)
