@@ -71,6 +71,7 @@
   <script src="{% static 'lib/easing/easing.min.js' %}"></script>
   <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
   <script src="{% static 'lib/scrollreveal/scrollreveal.min.js' %}"></script>
+
   <!-- Contact Form JavaScript File -->
   <script src="{% static 'js/contact.js' %}"></script> 
 
@@ -81,8 +82,33 @@
 {% comment %} $(function() {
   $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
 }); {% endcomment %}
+$(document).ready(function(){
 
+$(window).scroll(function(e){ 
+              var $el = $('#navbar'); 
+
+              if ($(this).scrollTop() > 500){ 
+                  $('#navbar').css({'top': '-200px'}); 
+              
+              }
+             
+            });     
+
+
+});
 
 </script>
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } 
+  prevScrollpos = currentScrollPos;
+}
+</script>
+
 {% endblock javascript %}
 </html>

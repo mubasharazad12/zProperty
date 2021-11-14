@@ -368,7 +368,7 @@
 <!--/ Property Grid End /--> {% endcomment %}
 <div class="off-plan-grid ">
 
-    {% for property in plans_list %}
+{% for property in plans_list %}
 <div class="big wow fadeInLeftBig">
 	 <article class="recipe">
 		<div class="pizza-box">
@@ -392,98 +392,22 @@
 			<p class="recipe-desc">{{property.Overview}}</p>
 
 		
-<button class="btn-challenge">
- <a href="{% url 'offplandetail' property.id %}">	Click Here For Details
-    <div class="hover-area">
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="hover-col"></div>
-        <div class="icon-home">
-            <div class="roof roof-1"></div>
-            <div class="roof roof-2"></div>
-            <div class="roof-design roof-design-1"></div>
-            <div class="roof-design roof-design-2"></div>
-            <div class="roof-side roof-side-1"></div>
-            <div class="roof-side roof-side-2"></div>
-            <div class="roof-wall roof-wall-1"></div>
-            <div class="roof-wall roof-wall-2"></div>
-            <div class="wall wall-1"></div>
-            <div class="wall wall-2"></div>
-            <div class="wall wall-3"></div>
-            <div class="wall wall-4"></div>
-            <div class="door"></div>
-            <div class="floor"></div>
-            
-        </div>
-    </div>
-    
-</button>
+{% comment %} <button class="btn-challenge">
+ <a href="{% url 'offplandetail' property.id %}">	Click Here For Details 
+</button> {% endcomment %}
+
+  <button class="learn-more">
+    <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text"><a href="{% url 'offplandetail' property.id %}">	View Details </span>
+  </button>
+
 
 		</div>
 	</article>
 </div>
+
 {% endfor %}
 
 
