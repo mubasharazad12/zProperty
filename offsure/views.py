@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from Accounts.forms import PropertyInquiryForm
 from offsure.models import OFFPlanAndInvestment
-from offsure.models import OffPlanGallery, PaymentPlans
+from offsure.models import OffPlanGallery, PaymentPlans, Amenitie, InvestmentPlans
 
 
 # Create your views here.
@@ -18,7 +18,9 @@ def offplan(request):
 def offplandetail(request, planid):
     plan_detail = OFFPlanAndInvestment.objects.get(id=planid)
     headerImages = OffPlanGallery.objects.filter(plan=plan_detail)
-    invesments = PaymentPlans.objects.filter(plan=plan_detail)
+    paymentPlans = PaymentPlans.objects.filter(plan=plan_detail)
+    invesmentPlans = InvestmentPlans.objects.filter(plan=plan_detail)
+    amentites = Amenitie.objects.filter(property=plan_detail)
     if request.method == "POST":
         form = PropertyInquiryForm(request.POST)
         if form.is_valid():
@@ -30,6 +32,10 @@ def offplandetail(request, planid):
     form = PropertyInquiryForm()
     context = {
         "plan_detail": plan_detail,
-        "form": form
+        "Galleries": headerImages,
+        "invesments": invesmentPlans,
+        "paymentPlans": paymentPlans,
+        "amentites": amentites,
+        "formData": form
     }
     return render(request, "off-plan-detail.html", context=context)

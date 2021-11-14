@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import OFFPlanAndInvestment, OffPlanGallery, PaymentPlans
+from .models import OFFPlanAndInvestment, OffPlanGallery, PaymentPlans, Amenitie, InvestmentPlans
+
+
 # Register your models here.
 
 
@@ -11,8 +13,16 @@ class PaymentPlanInvesmentInline(admin.TabularInline):
     model = PaymentPlans
 
 
+class InvestmentPlanInline(admin.TabularInline):
+    model = InvestmentPlans
+
+
+class AmenitieInline(admin.TabularInline):
+    model = Amenitie
+
+
 class OffPlaneInvesmentInline(admin.ModelAdmin):
-    inlines = [GalleryInline, PaymentPlanInvesmentInline]
+    inlines = [GalleryInline, PaymentPlanInvesmentInline, AmenitieInline, InvestmentPlanInline]
 
 
 admin.site.register(OFFPlanAndInvestment, OffPlaneInvesmentInline)

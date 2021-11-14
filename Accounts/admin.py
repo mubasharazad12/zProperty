@@ -6,11 +6,11 @@ from .models import Question, PropertyInquiry
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ["first_name", "last_name", "email", "phone", "posted_date"]
+    list_display = ["name", "email", "phone", "posted_date"]
 
 
 class PropertyInquiryAdmin(admin.ModelAdmin):
-    list_display = ["first_name", "last_name", "email", "phone", "posted_date", "property_name"]
+    list_display = ["name", "email", "phone", "posted_date", "property_name"]
 
 
 admin.site.register(Question, QuestionAdmin)
