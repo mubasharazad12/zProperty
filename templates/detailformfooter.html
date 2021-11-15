@@ -30,9 +30,16 @@
               webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
     <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-      {% if plan_detail.flowPlan_Image  %}
+      {% comment %} {% if plan_detail.flowPlan_Image  %}
       <img width="100%" height="500px" src="{{plan_detail.flowPlan_Image.url}}" alt="No Image">
-      {% endif %}
+      {% endif %} {% endcomment %}
+       <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+            {% for img in Galleries %}
+            <div class="carousel-item-b carousel-detail">
+              <img src="{{img.Image.url}}" alt="img" class="floor-plans-img">
+            </div>
+            {% endfor %}
+          </div>
     </div>
     <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
       {{plan_detail.locationFrame|safe}}
@@ -131,7 +138,7 @@
 
 <div class="inquiry-section">
   <div class="inquiry-section1">
-    <div class="col-md-12 wow fadeInUpBig">
+    <div class="col-md-12 wow fadeInUpBig form-x-y-set">
       <div class="row section-t3">
         <div class="col-sm-12">
           <div class="title-box-d">
@@ -141,47 +148,54 @@
       </div>
       <div class="">
         <div class="property-contact">
-          <form class="form-a" method="POST" action="">
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-md-12 mb-1">
-                <div class="form-group">
-
-                  {{ formData.name }}
+<form class="form-a contactForm" action="" method="post" role="form">
+                {% csrf_token %}
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                    
+                       {{formData.name}}
+                       
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        {{formData.email}}
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        {{formData.phone}}
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                       {{formData.Subject}}
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        {{formData.Question}}
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-a">Send Message</button>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-12 mb-1">
-                <div class="form-group">
-                  {{ formData.email }}
-                </div>
-              </div>
-              <div class="col-md-12 mb-1">
-                <div class="form-group">
-                  {{ formData.phone }}
-                </div>
-              </div>
-              <div class="col-md-12 mb-1">
-                <div class="form-group">
-                  {{ formData.Subject}}
-                </div>
-              </div>
-              <div class="col-md-12 mb-1">
-                <div class="form-group">
-                  {{ formData.Question}}
-
-                </div>
-              </div>
-              <div class="col-md-12">
-                <button type="submit" class="btn btn-a">Send Message</button>
-              </div>
-            </div>
-          </form>
+              </form>
         </div>
       </div>
     </div>
   </div>
   <div class="inquiry-section2">
-    <img src="{% static 'img\about-1.jpg' %}" alt="img">
+    <img src="{% static 'img\about-1.jpg' %}" alt="img" class="form-img">
   </div>
 
 </div>

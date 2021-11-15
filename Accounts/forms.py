@@ -13,25 +13,38 @@ class CreateUserForm(UserCreationForm):
 class QuestionForm(forms.ModelForm):
     name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Full Name"
+        "placeholder": "Full Name",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter at least 4 chars.",
+
     }))
 
     email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Email"
+        "placeholder": "Email",
+        "data-rule" : "email",
+        "data-msg" : "Please enter a valid email.",
     }))
     phone = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Phone#"
+       "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Phone#",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter a valid phone number.",
+        "type":"number"
     }))
 
     Subject = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Subject"
+        "placeholder": "Subject",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter at least 8 chars of subject.",
     }))
     Question = forms.CharField(widget=forms.Textarea(attrs={
         "class": "form-control",
-        "placeholder": "Message"
+        "placeholder": "Message",
+        "data-rule" : "minlen:2",
+        "data-msg" : "Please write something for us.",
+        "rows" :"6" 
     }))
 
     class Meta:
@@ -42,23 +55,38 @@ class QuestionForm(forms.ModelForm):
 class PropertyInquiryForm(forms.ModelForm):
     name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Full Name"
+        "placeholder": "Full Name",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter at least 4 chars.",
+
     }))
+
     email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Email"
+        "placeholder": "Email",
+        "data-rule" : "email",
+        "data-msg" : "Please enter a valid email.",
     }))
     phone = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Phone#"
+       "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Phone#",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter a valid phone number.",
+        "type":"number"
     }))
+
     Subject = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
-        "placeholder": "Subject"
+        "placeholder": "Subject",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter at least 8 chars of subject.",
     }))
     Question = forms.CharField(widget=forms.Textarea(attrs={
         "class": "form-control",
-        "placeholder": "Message"
+        "placeholder": "Message",
+        "data-rule" : "minlen:2",
+        "data-msg" : "Please write something for us.",
+        "rows" :"6" 
     }))
 
     class Meta:

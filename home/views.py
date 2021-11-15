@@ -3,7 +3,7 @@ from offsure.models import OFFPlanAndInvestment
 from residential.models import ResidentialProperties
 from .models import HomeDashboardSlider
 from Agents.models import Agent
-from Accounts.forms import QuestionForm
+from Accounts.forms import QuestionForm, Question
 
 
 # Create your views here.
@@ -30,7 +30,17 @@ def index(request):
 
 
 def contact(request):
-    return render(request, "contact.html")
+    if request.method == "POST":
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            newform = form.save(commit=False)
+            newform.save()
+            return redirect('contact')
+    form = QuestionForm()
+    context = {
+        "form": form
+    }
+    return render(request, "contact.html" , context)
 
 
 def about(request):
