@@ -96,12 +96,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
 ]
 
 # Internationalization
@@ -136,3 +130,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'EmailAddress'
 EMAIL_HOST_PASSWORD = 'PASSWORD'
 EMAIL_USE_TLS = True
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.INFO: '',
+    messages.ERROR: 'alert-danger',
+}

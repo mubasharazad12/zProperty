@@ -1,6 +1,5 @@
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
@@ -9,10 +8,8 @@ from django.core.mail import EmailMessage
 from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-
-
+from django.contrib import messages
 # Create your views here.
-
 
 def login_user(request):
     if request.method == "POST":
@@ -22,11 +19,14 @@ def login_user(request):
         if user is not None:
             login(request, user)
             return redirect("index")
+        else:
+            messages.error(request, "Login Failed")
     return render(request, "Accounts/Login.html")
 
 
 def logout_user(request):
     logout(request)
+    messages.success(request, "Logout Successful")
     return redirect('login')
 
 
@@ -36,6 +36,9 @@ def register_user(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Registration Complete")
+        else:
+            messages.error(request, "Registration Failed")
     context = {"form": form}
     return render(request, "Accounts/Register.html", context)
 
@@ -56,10 +59,10 @@ def forget_password(request):
             to_email = email
             send_email = EmailMessage(email_subject, message, to=[to_email])
             send_email.send()
+            messages.success(request, "Please check your email for reset link")
             return redirect('login')
         else:
-            # print("[+] Email not found")
-            return HttpResponse(request, "<h1> Email Not Found </h1>")
+            messages.error(request, "Email Not Found")
     return render(request, "Accounts/forget_password.html")
 
 
@@ -86,8 +89,9 @@ def resetPassword(request):
             user = User.objects.get(pk=uid)
             user.set_password(password1)
             user.save()
+            messages.success(request, "Password Reset Complete")
             return redirect('login')
         else:
-            print('[+] Password Does not match')
+            messages.error(request, "Password Does Not Match")
             return redirect('forgetpassword')
     return render(request, "Accounts/resetPassword.html")
