@@ -86,7 +86,7 @@ class PropertyInquiryForm(forms.ModelForm):
         "placeholder": "Message",
         "data-rule" : "minlen:2",
         "data-msg" : "Please write something for us.",
-        "rows" :"6" 
+        "rows" :"6"
     }))
 
     class Meta:

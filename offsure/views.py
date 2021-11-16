@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-
 from Accounts.forms import PropertyInquiryForm
 from offsure.models import OFFPlanAndInvestment
 from offsure.models import OffPlanGallery, PaymentPlans, Amenitie, InvestmentPlans
