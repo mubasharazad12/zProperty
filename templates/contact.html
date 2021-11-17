@@ -51,10 +51,10 @@
         <div class="col-sm-12 section-t8 wow fadeInUpBig">
           <div class="row">
             <div class="col-md-7">
-              <form class="form-a contactForm" action="" method="post" role="form">
-               
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
+              <form class="form-a contactForm" action={% url 'contact' %} method="POST" role="form">
+
+                {% csrf_token %}
+                {% include 'messages.html' %}
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
@@ -157,14 +157,10 @@
                         </li>
                         <li class="list-inline-item">
                           <a href="#" class="link-one">
-                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
                           </a>
                         </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-dribbble" aria-hidden="true"></i>
-                          </a>
-                        </li>
+                      
                       </ul>
                     </div>
                   </div>

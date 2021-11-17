@@ -5,6 +5,47 @@ from django import forms
 
 
 class CreateUserForm(UserCreationForm):
+    username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+        "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Username",
+        "data-rule" : "minlen:4",
+        "data-msg" : "Please enter at least 4 chars.",
+
+    }))
+
+    email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={
+        "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Email",
+        "data-rule" : "email",
+        "data-msg" : "Please enter a valid email.",
+    }))
+    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+       "class": "form-control form-control-lg form-control-a",
+        "placeholder": "First Name",
+        "data-rule" : "minlen:3",
+        "data-msg" : "Please enter at least 3 chars.",
+    }))
+
+    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+        "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Last Name",
+        "data-rule" : "minlen:3",
+        "data-msg" : "Please enter at least 3 chars.",
+    }))
+    password1 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+        "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Password",
+        "data-rule" : "minlen:8",
+        "data-msg" : "Please enter at least 8 chars of password.",
+        "type":"password"
+    }))
+    password2 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
+        "class": "form-control form-control-lg form-control-a",
+        "placeholder": "Confirm Password",
+        "data-rule" : "minlen:8",
+        "data-msg" : "Please enter at least 8 chars of password.",
+        "type":"password"
+    }))
     class Meta:
         model = User
         fields = ["username", "email", "first_name", "last_name", "password1", "password2"]

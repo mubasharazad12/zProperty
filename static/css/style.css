@@ -134,6 +134,7 @@ a:hover {
 }
 .card-img-d img {
   height: 400px;
+  width: 500px;
 }
 .carousel-detail img{
   height: 700px;
@@ -237,7 +238,22 @@ a:hover {
 }
 
 /*------/ Space Padding /------*/
-
+.register-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+.contact small  {
+  margin: 0 auto;
+}
+.section-t8-login {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
 .section-t8 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -1838,7 +1854,11 @@ display: none;
   .link-a {
     font-size: .9rem;
   }
+  .register-section{
 
+    width: 50%;
+
+  }
   .link-a span {
     font-size: 1.5rem;
   }
@@ -2402,6 +2422,7 @@ display: none;
     flex-wrap: wrap;
   max-width:800px;
   margin:0 auto;
+  justify-content: center;
 }
 .listing-item {
    display: block;

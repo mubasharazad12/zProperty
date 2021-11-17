@@ -84,7 +84,7 @@
       });
   
       /*--/ Property owl /--*/
-      $('#property-carousel').owlCarousel({
+       $('#property-carousel').owlCarousel({
           loop: true,
           margin: 30,
           responsive: {
@@ -114,7 +114,7 @@
       });
   
       /*--/ News owl /--*/
-      $('#new-carousel').owlCarousel({
+                            $('#new-carousel').owlCarousel({
           loop: true,
           margin: 30,
           responsive: {

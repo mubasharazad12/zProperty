@@ -12,7 +12,7 @@ def index(request):
     off_plan_properties = OFFPlanAndInvestment.objects.all().order_by('uploaded_date')
     all_res_properties = ResidentialProperties.objects.all().order_by('uploaded_date')
     home_dashboard = HomeDashboardSlider.objects.all()
-    agents = Agent.objects.all()
+    agents = Agent.objects.all()[:3]
     if request.method == "POST":
         form = QuestionForm(request.POST)
         if form.is_valid():
@@ -44,7 +44,7 @@ def contact(request):
 
 
 def about(request):
-    agents = Agent.objects.all()
+    agents = Agent.objects.all()[:3]
     context = {
         "agents": agents
     }

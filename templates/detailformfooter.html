@@ -119,34 +119,33 @@
 
 
 {% comment %} invesments plan {% endcomment %}
-<div class="main-container">
+  {% if invesments %}
+<div class="main-container wow fadeInRightBig">
   <div class="heading">
     <h1 class="heading__title">Invesment Plans</h1>
 
   </div>
   <div class="cards">
-  {% if invesments %}
+
     {% for plans in invesments %}
     <div class="card card-1">
       <h2 class="card__title"> {{plans.investmentPlan}} </h2>
       <p>  {{plans.investmentDetails}} </p>
 
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now </a>
-      </p>
+      
     </div>
     
     {% endfor %}
-  {% endif %}
+
    
   </div>
 </div>
-
+  {% endif %}
 
 {% comment %} paymentPlans {% endcomment %}
 {% if paymentPlans %}
 <h2 id="title" class="heading__title ">Payment Plans </h2> 
-<div class="hover-table-layout">
+<div class="hover-table-layout wow fadeInLeftBig">
 {% for plans in paymentPlans %}
     <div class="listing-item">
         <figure class="image">
@@ -173,7 +172,7 @@
 
 
 
- <section class="contact ">
+ <section class="contact "  id="Interest-form">
 
     <div class="container">
       <div class="row">
@@ -183,9 +182,9 @@
           <div class="row">
             <div class="col-md-7">
               <form class="form-a contactForm" action="" method="post" role="form">
-               
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
+               {% csrf_token %}
+               {% include 'messages.html' %}
+                
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
@@ -288,14 +287,10 @@
                         </li>
                         <li class="list-inline-item">
                           <a href="#" class="link-one">
-                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
                           </a>
                         </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-dribbble" aria-hidden="true"></i>
-                          </a>
-                        </li>
+                
                       </ul>
                     </div>
                   </div>
