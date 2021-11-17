@@ -29,6 +29,6 @@ def propertyDetail(request, id=0):
         "plan_detail": plan,
         "Galleries": gallery,
         "amentites": amanities,
-        "formData": form
+        "form": form
     }
     return render(request, "property-detail.html", context)
