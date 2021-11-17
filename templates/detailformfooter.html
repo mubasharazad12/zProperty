@@ -117,31 +117,6 @@
 </section>
 <!--/ Property Single End /-->
 
-{% comment %} paymentPlans {% endcomment %}
-{% if paymentPlans %}
-<h2 id="title">Payment Plans </h2> 
-<div class="hover-table-layout">
-{% for plans in paymentPlans %}
-    <div class="listing-item">
-        <figure class="image">
-            <img src="{% static 'img/logo/logo-img.jpg' %}" alt="image">
-            <figcaption>
-              <div class="caption">
-                <h1>  </h1>
-                <p></p>
-              </div>
-            </figcaption>
-        </figure>
-       <div class="listing">
-            <h4>{{plans.Instalment_name}}</h4>
-            <h4>{{plans.Installment_date}} </h4>
-
-        </div> 
-    </div>
-      {% endfor %}
-
-</div>
-{% endif %}
 
 {% comment %} invesments plan {% endcomment %}
 <div class="main-container">
@@ -168,6 +143,31 @@
 </div>
 
 
+{% comment %} paymentPlans {% endcomment %}
+{% if paymentPlans %}
+<h2 id="title" class="heading__title ">Payment Plans </h2> 
+<div class="hover-table-layout">
+{% for plans in paymentPlans %}
+    <div class="listing-item">
+        <figure class="image">
+            <img src="{% static 'img/logo/logo-img.jpg' %}" alt="image">
+            <figcaption>
+              <div class="caption">
+                <h1>  </h1>
+                <p></p>
+              </div>
+            </figcaption>
+        </figure>
+       <div class="listing">
+            <h4>{{plans.Instalment_name}}</h4>
+            <h4>{{plans.Installment_date}} </h4>
+
+        </div> 
+    </div>
+      {% endfor %}
+
+</div>
+{% endif %}
 
 
 
@@ -179,7 +179,7 @@
       <div class="row">
       
         <div class="col-sm-12 section-t8 wow fadeInUpBig">
-                 <h3 class="title-d prop-heading">Property Inquiry Form</h3>
+                 <h3 class="title-d prop-heading heading__title">Property Inquiry Form</h3>
           <div class="row">
             <div class="col-md-7">
               <form class="form-a contactForm" action="" method="post" role="form">

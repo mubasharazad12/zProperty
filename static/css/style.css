@@ -29,8 +29,7 @@ a {
 }
 
 a:hover {
-  /* color: #6e8a79; */
-  color: #fff;
+  color: #1b98e0;
   text-decoration: none;
 }
 
@@ -240,7 +239,7 @@ a:hover {
 /*------/ Space Padding /------*/
 
 .section-t8 {
-  padding-top: 8rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
@@ -938,11 +937,13 @@ a:hover {
 
 .intro .intro-body {
   padding-left: 1rem;
+  text-align: center;
 }
 
 .intro .intro-body .price-a {
   color: #ffffff;
-  padding: 1rem 1.5rem;
+  /* padding: 1rem 1.5rem; */
+  margin: 5px;
   border: 2px solid #ffffff;
   border-radius: 10px;
   text-transform: uppercase;
@@ -1804,7 +1805,7 @@ display: none;
 
 @media (min-width: 576px) {
   .intro .intro-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 
   .intro .intro-subtitle.intro-price {
@@ -1873,7 +1874,7 @@ display: none;
   }
 
   .intro .intro-title {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .intro .intro-subtitle {
@@ -2018,7 +2019,7 @@ display: none;
   }
 
   .intro .intro-title {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 
   .intro .intro-subtitle.intro-price {
@@ -2386,7 +2387,7 @@ display: none;
 #title{
   text-align: center;
   font-size:30px;
-  text-transform: uppercase;
+  
   margin-top: 70px;
 }
 .hover-table-layout {
