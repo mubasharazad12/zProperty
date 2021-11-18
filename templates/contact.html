@@ -56,7 +56,8 @@
               <form action="{% url 'contact' %}" method="POST" role="form">
 
                 {% csrf_token %}
-                {% include 'messages.html' %}
+               {% include 'messages.html' %}
+
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <div class="form-group">

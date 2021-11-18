@@ -12,7 +12,6 @@ class CreateUserForm(UserCreationForm):
         "data-msg" : "Please enter at least 4 chars.",
 
     }))
-
     email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Email",
