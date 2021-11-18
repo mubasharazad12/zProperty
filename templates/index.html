@@ -16,16 +16,13 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <div class="intro-body wow backInDown">
-                  <p class="intro-title-top">
-                    <br> 364sqft
-                  </p>
                   <h1 class="intro-title mb-4">
                     <span class="color-b">  The Tower at Peninsula Two  </span>
                     <br>
                   </h1>
                   <p class="intro-subtitle intro-price ">
-                    <a href="{% url 'property-grid' %}"><span class="price-a">Off Plan Properties</span></a>
-                    <a href="#"><span class="price-a">Residental Properties</span></a>
+                    <a href="{% url 'offplan' %}"><span class="price-a">Off Plan Properties</span></a>
+                    <a href="{% url 'property-grid' %}"><span class="price-a">Residental Properties</span></a>
                   </p>
                   
                 </div>
@@ -43,16 +40,13 @@
             <div class="row justify-content-center" >
               <div class="col-lg-8">
                 <div class="intro-body">
-                  <p class="intro-title-top">Doral, Florida
-                    <br> 78345
-                  </p>
                   <h1 class="intro-title mb-4">
                     <span class="color-b">204 </span> Rino
                     <br> Venda Road Five
                   </h1>
                   <p class="intro-subtitle intro-price">
                     <a href="{% url 'property-grid' %}"><span class="price-a">Off Plan Properties</span></a>
-                    <a href="#"><span class="price-a">Residental Properties</span></a>
+                    <a><span class="price-a">Residental Properties</span></a>
                   </p>
                 </div>
               </div>
@@ -69,16 +63,13 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <div class="intro-body">
-                  <p class="intro-title-top">Doral, Florida
-                    <br> 78345
-                  </p>
                   <h1 class="intro-title mb-4">
                     <span class="color-b">204 </span> Alira
                     <br> Roan Road One
                   </h1>
                   <p class="intro-subtitle intro-price">
                   <a href="{% url 'property-grid' %}"><span class="price-a">Off Plan Properties</span></a>
-                    <a href="#"><span class="price-a">Residental Properties</span></a>
+                    <a><span class="price-a">Residental Properties</span></a>
                   </p>
                 </div>
               </div>
@@ -122,7 +113,7 @@
             </p>
           </div>
           <div class="card-footer-c">
-            <a href="#" class="link-c link-icon">Read more
+            <a class="link-c link-icon">Read more
               <span class="ion-ios-arrow-forward"></span>
             </a>
           </div>
@@ -146,7 +137,7 @@
             </p>
           </div>
           <div class="card-footer-c">
-            <a href="#" class="link-c link-icon">Read more
+            <a class="link-c link-icon">Read more
               <span class="ion-ios-arrow-forward"></span>
             </a>
           </div>
@@ -170,7 +161,7 @@
             </p>
           </div>
           <div class="card-footer-c">
-            <a href="#" class="link-c link-icon">Read more
+            <a class="link-c link-icon">Read more
               <span class="ion-ios-arrow-forward"></span>
             </a>
           </div>
@@ -199,6 +190,7 @@
     </div>
     
 
+    {% if offplan_all_properties %}
     <div id="property-carousel" class="owl-carousel owl-theme wow fadeInUp">
     {% for property in offplan_all_properties %}
       <div class="carousel-item-b">
@@ -249,6 +241,9 @@
       </div>
 {% endfor %}
     </div>
+  {% else %}
+      <h2 class="text-center">coming soon </h2>
+  {% endif %}
   </div>
 </section>
 <!--/ Property End /-->
@@ -281,14 +276,14 @@
             <div class="card-header-d">
               <div class="card-title-d align-self-center">
                 <h3 class="title-d">
-                  <a href="agent-single.html" class="link-two">{{agnt.first_name}}
+                  <a class="link-two">{{agnt.first_name}}
                     <br> {{agnt.last_name}}</a>
                 </h3>
               </div>
             </div>
             <div class="card-body-d">
               <p class="content-d color-text-a">
-                {{agnt.description}}
+                {{agnt.description|truncatechars:150}}
               </p>
               <div class="info-agents color-a">
                 <p>
@@ -303,27 +298,27 @@
               <div class="socials-footer d-flex justify-content-center">
                 <ul class="list-inline">
                   <li class="list-inline-item">
-                    <a href="#" class="link-one">
+                    <a class="link-one">
                       <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#" class="link-one">
+                    <a  class="link-one">
                       <i class="fa fa-twitter" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#" class="link-one">
+                    <a  class="link-one">
                       <i class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#" class="link-one">
+                    <a class="link-one">
                       <i class="fa fa-pinterest-p" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#" class="link-one">
+                    <a class="link-one">
                       <i class="fa fa-dribbble" aria-hidden="true"></i>
                     </a>
                   </li>
@@ -335,128 +330,6 @@
 
       </div>
       {% endfor %}
-<!--      <div class="col-md-4">-->
-<!--        <div class="card-box-d">-->
-<!--          <div class="card-img-d">-->
-<!--            <img src="{% static 'img/agent-1.jpg' %}" alt="" class="img-d img-fluid">-->
-<!--          </div>-->
-<!--          <div class="card-overlay card-overlay-hover">-->
-<!--            <div class="card-header-d">-->
-<!--              <div class="card-title-d align-self-center">-->
-<!--                <h3 class="title-d">-->
-<!--                  <a href="agent-single.html" class="link-two">Stiven Spilver-->
-<!--                    <br> Darw</a>-->
-<!--                </h3>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="card-body-d">-->
-<!--              <p class="content-d color-text-a">-->
-<!--                Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.-->
-<!--              </p>-->
-<!--              <div class="info-agents color-a">-->
-<!--                <p>-->
-<!--                  <strong>Phone: </strong> +54 356 945234-->
-<!--                </p>-->
-<!--                <p>-->
-<!--                  <strong>Email: </strong> agents@example.com-->
-<!--                </p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="card-footer-d">-->
-<!--              <div class="socials-footer d-flex justify-content-center">-->
-<!--                <ul class="list-inline">-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-facebook" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-twitter" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-instagram" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-pinterest-p" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-dribbble" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-4">-->
-<!--        <div class="card-box-d">-->
-<!--          <div class="card-img-d">-->
-<!--            <img src="{% static 'img/agent-5.jpg' %}" alt="" class="img-d img-fluid">-->
-<!--          </div>-->
-<!--          <div class="card-overlay card-overlay-hover">-->
-<!--            <div class="card-header-d">-->
-<!--              <div class="card-title-d align-self-center">-->
-<!--                <h3 class="title-d">-->
-<!--                  <a href="agent-single.html" class="link-two">Emma Toledo-->
-<!--                    <br> Cascada</a>-->
-<!--                </h3>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="card-body-d">-->
-<!--              <p class="content-d color-text-a">-->
-<!--                Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.-->
-<!--              </p>-->
-<!--              <div class="info-agents color-a">-->
-<!--                <p>-->
-<!--                  <strong>Phone: </strong> +54 356 945234-->
-<!--                </p>-->
-<!--                <p>-->
-<!--                  <strong>Email: </strong> agents@example.com-->
-<!--                </p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="card-footer-d">-->
-<!--              <div class="socials-footer d-flex justify-content-center">-->
-<!--                <ul class="list-inline">-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-facebook" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-twitter" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-instagram" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-pinterest-p" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                  <li class="list-inline-item">-->
-<!--                    <a href="#" class="link-one">-->
-<!--                      <i class="fa fa-dribbble" aria-hidden="true"></i>-->
-<!--                    </a>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
   </div>
 </section>
@@ -484,11 +357,11 @@
           <div class="card-overlay">
             <div class="card-header-b">
               <div class="card-category-b">
-                <a href="#" class="category-b">House</a>
+                <a class="category-b">House</a>
               </div>
               <div class="card-title-b">
                 <h2 class="title-2">
-                  <a href="blog-single.html">House is comming
+                  <a>House is comming
                     <br> new</a>
                 </h2>
               </div>
@@ -507,11 +380,11 @@
           <div class="card-overlay">
             <div class="card-header-b">
               <div class="card-category-b">
-                <a href="#" class="category-b">Travel</a>
+                <a class="category-b">Travel</a>
               </div>
               <div class="card-title-b">
                 <h2 class="title-2">
-                  <a href="blog-single.html">Travel is comming
+                  <a>Travel is comming
                     <br> new</a>
                 </h2>
               </div>
@@ -530,11 +403,11 @@
           <div class="card-overlay">
             <div class="card-header-b">
               <div class="card-category-b">
-                <a href="#" class="category-b">Park</a>
+                <a class="category-b">Park</a>
               </div>
               <div class="card-title-b">
                 <h2 class="title-2">
-                  <a href="blog-single.html">Park is comming
+                  <a>Park is comming
                     <br> new</a>
                 </h2>
               </div>
@@ -553,11 +426,11 @@
           <div class="card-overlay">
             <div class="card-header-b">
               <div class="card-category-b">
-                <a href="#" class="category-b">Travel</a>
+                <a class="category-b">Travel</a>
               </div>
               <div class="card-title-b">
                 <h2 class="title-2">
-                  <a href="#">Travel is comming
+                  <a>Travel is comming
                     <br> new</a>
                 </h2>
               </div>
@@ -600,9 +473,7 @@
               </div>
               <div class="testimonials-content">
                 <p class="testimonial-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                  debitis hic ber quibusdam
-                  voluptatibus officia expedita corpori.
+                  I just wanted to thank you for your excellent service. the service has been truly exceptional. You've been there every step of the way, keeping me informed about everything. Everything was done so quickly and efficiently, I could not have asked for more. Thank you again for all your help
                 </p>
               </div>
               <div class="testimonial-author-box">
@@ -627,9 +498,7 @@
               </div>
               <div class="testimonials-content">
                 <p class="testimonial-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                  debitis hic ber quibusdam
-                  voluptatibus officia expedita corpori.
+                  We were extremely happy with the diversity our agent brought to us by showing us different property options and he let us figure out what we want ourselves.
                 </p>
               </div>
               <div class="testimonial-author-box">
@@ -648,7 +517,7 @@
 
 
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<a class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <div id="preloader"></div>
 
 

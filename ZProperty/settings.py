@@ -127,13 +127,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static/Media")
 # Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'EmailAddress'
-EMAIL_HOST_PASSWORD = 'PASSWORD'
+EMAIL_HOST_USER = 'roopch447@gmail.com'
+EMAIL_HOST_PASSWORD = 'abc*963258741'
 EMAIL_USE_TLS = True
 
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
-    messages.INFO: '',
     messages.ERROR: 'alert-danger',
+    messages.SUCCESS: 'alert-success',
 }

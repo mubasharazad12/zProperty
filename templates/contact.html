@@ -16,7 +16,9 @@
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Contact US</h1>
-            <span class="color-text-a">Aut  consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>
+            <span class="color-text-a">
+              We enjoy visitor’s company, and we make a coffee to rival Starbucks! Why not come and see for yourself!?. Whatever the property need, you can be assured that all of our brokers are qualified and educated on the market – and importantly, have your best interests at heart! Our reputation is for providing unparalleled service, and this has been our motto from Day 1! Stop by, and – Let’s property together.
+            </span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -51,7 +53,7 @@
         <div class="col-sm-12 section-t8 wow fadeInUpBig">
           <div class="row">
             <div class="col-md-7">
-              <form class="form-a contactForm" action={% url 'contact' %} method="POST" role="form">
+              <form action="{% url 'contact' %}" method="POST" role="form">
 
                 {% csrf_token %}
                 {% include 'messages.html' %}

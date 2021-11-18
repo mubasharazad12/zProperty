@@ -21,7 +21,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"
-         aria-selected="false">Ubication</a>
+         aria-selected="false">Location</a>
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
@@ -122,22 +122,15 @@
   {% if invesments %}
 <div class="main-container wow fadeInRightBig">
   <div class="heading">
-    <h1 class="heading__title">Invesment Plans</h1>
-
+    <h1 class="heading__title">Investment Plans</h1>
   </div>
   <div class="cards">
-
     {% for plans in invesments %}
     <div class="card card-1">
       <h2 class="card__title"> {{plans.investmentPlan}} </h2>
       <p>  {{plans.investmentDetails}} </p>
-
-      
     </div>
-    
     {% endfor %}
-
-   
   </div>
 </div>
   {% endif %}
@@ -159,140 +152,131 @@
         </figure>
        <div class="listing">
             <h4>{{plans.Instalment_name}}</h4>
-            <h4>{{plans.Installment_date}} </h4>
-
+            <h4>{{plans.Installment_plan}} </h4>
         </div> 
     </div>
-      {% endfor %}
-
+  {% endfor %}
 </div>
 {% endif %}
 
-
-
-
-
- <section class="contact "  id="Interest-form">
-
-    <div class="container">
-      <div class="row">
-      
-        <div class="col-sm-12 section-t8 wow fadeInUpBig">
-                 <h3 class="title-d prop-heading heading__title">Property Inquiry Form</h3>
-          <div class="row">
-            <div class="col-md-7">
-              <form class="form-a contactForm" action="" method="post" role="form">
-               {% csrf_token %}
-               {% include 'messages.html' %}
-                
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                    
-                       {{form.name}}
-                       
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                        {{form.email}}
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                        {{form.phone}}
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                       {{form.Subject}}
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                        {{form.Question}}
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-a">Send Message</button>
+<section class="contact " id="Interest-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 section-t8 wow fadeInUpBig">
+        <h3 class="title-d prop-heading heading__title">Property Inquiry Form</h3>
+        <div class="row">
+          <div class="col-md-7">
+            <form method="POST" action="">
+              {% csrf_token %}
+              {% include 'messages.html' %}
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.name}}
+                    <div class="validation"></div>
                   </div>
                 </div>
-              </form>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.email}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.phone}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.Subject}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    {{form.Question}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <input value="Send Message" type="submit" class="btn btn-a">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5 section-md-t3">
+            <div class="icon-box section-b2">
+              <div class="icon-box-icon">
+                <span class="ion-ios-paper-plane"></span>
+              </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">Say Hello</h4>
+                </div>
+                <div class="icon-box-content">
+                  <p class="mb-1">Email.
+                    <span class="color-a">contact@example.com</span>
+                  </p>
+                  <p class="mb-1">Phone.
+                    <span class="color-a">+54 356 945234</span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="col-md-5 section-md-t3">
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-paper-plane"></span>
+            <div class="icon-box section-b2">
+              <div class="icon-box-icon">
+                <span class="ion-ios-pin"></span>
+              </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">Find us in</h4>
                 </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Say Hello</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">Email.
-                      <span class="color-a">contact@example.com</span>
-                    </p>
-                    <p class="mb-1">Phone.
-                      <span class="color-a">+54 356 945234</span>
-                    </p>
-                  </div>
+                <div class="icon-box-content">
+                  <p class="mb-1">
+                    Manhattan, Nueva York 10036,
+                    <br> EE. UU.
+                  </p>
                 </div>
               </div>
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-pin"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Find us in</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">
-                      Manhattan, Nueva York 10036,
-                      <br> EE. UU.
-                    </p>
-                  </div>
-                </div>
+            </div>
+            <div class="icon-box">
+              <div class="icon-box-icon">
+                <span class="ion-ios-redo"></span>
               </div>
-              <div class="icon-box">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-redo"></span>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">Social networks</h4>
                 </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Social networks</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <div class="socials-footer">
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                
-                      </ul>
-                    </div>
+                <div class="icon-box-content">
+                  <div class="socials-footer">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-facebook"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-twitter"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-instagram"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-google-plus"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -301,6 +285,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <div id="preloader"></div>

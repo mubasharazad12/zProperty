@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/zProperty.iml" filepath="$PROJECT_DIR$/.idea/zProperty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/newZproperty.iml" filepath="$PROJECT_DIR$/.idea/newZproperty.iml" />
     </modules>
   </component>
 </project>

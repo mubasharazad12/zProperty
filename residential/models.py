@@ -29,7 +29,7 @@ class ResidentialProperties(models.Model):
 
 class ResidentialPropertiesImage(models.Model):
     property = models.ForeignKey(ResidentialProperties, models.CASCADE)
-    description = models.TextField(null=True)
+    description = models.TextField(null=True, blank=True)
     Image = models.ImageField(upload_to="ResidentialInvesment/Gallery")
 
     def __str__(self) -> str:
@@ -44,7 +44,7 @@ class Amenitie(models.Model):
 class PaymentPlans(models.Model):
     plan = models.ForeignKey(ResidentialProperties, on_delete=models.CASCADE)
     Instalment_name = models.CharField(max_length=100, null=True)
-    Installment_date = models.CharField(max_length=100, null=True)
+    Installment_plan = models.TextField(null=True)
 
     def __str__(self):
         return str(self.plan)

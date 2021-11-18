@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from Accounts.forms import PropertyInquiryForm
 from offsure.models import OFFPlanAndInvestment
 from offsure.models import OffPlanGallery, PaymentPlans, Amenitie, InvestmentPlans
+from django.contrib import messages
 
 
 # Create your views here.
@@ -27,6 +28,7 @@ def offplandetail(request, planid):
             newform.property_type = "Off plan"
             newform.property_name = plan_detail.Title
             newform.save()
+            messages.success(request, "Question posted you will soon hear from us")
             return redirect('offplandetail', planid)
     form = PropertyInquiryForm()
     context = {

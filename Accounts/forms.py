@@ -83,9 +83,8 @@ class QuestionForm(forms.ModelForm):
     Question = forms.CharField(widget=forms.Textarea(attrs={
         "class": "form-control",
         "placeholder": "Message",
-        "data-rule" : "minlen:2",
         "data-msg" : "Please write something for us.",
-        "rows" :"6" 
+        "rows" :"6"
     }))
 
     class Meta:
@@ -97,7 +96,6 @@ class PropertyInquiryForm(forms.ModelForm):
     name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Full Name",
-        "data-rule" : "minlen:4",
         "data-msg" : "Please enter at least 4 chars.",
 
     }))
@@ -111,7 +109,6 @@ class PropertyInquiryForm(forms.ModelForm):
     phone = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
        "class": "form-control form-control-lg form-control-a",
         "placeholder": "Phone#",
-        "data-rule" : "minlen:4",
         "data-msg" : "Please enter a valid phone number.",
         "type":"number"
     }))
@@ -119,13 +116,11 @@ class PropertyInquiryForm(forms.ModelForm):
     Subject = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
         "class": "form-control form-control-lg form-control-a",
         "placeholder": "Subject",
-        "data-rule" : "minlen:4",
         "data-msg" : "Please enter at least 8 chars of subject.",
     }))
     Question = forms.CharField(widget=forms.Textarea(attrs={
         "class": "form-control",
         "placeholder": "Message",
-        "data-rule" : "minlen:2",
         "data-msg" : "Please write something for us.",
         "rows" :"6"
     }))
