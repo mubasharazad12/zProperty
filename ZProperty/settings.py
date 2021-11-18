@@ -127,8 +127,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static/Media")
 # Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'roopch447@gmail.com'
-EMAIL_HOST_PASSWORD = 'abc*963258741'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
 from django.contrib.messages import constants as messages
