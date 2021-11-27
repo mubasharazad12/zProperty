@@ -10,7 +10,7 @@ class OFFPlanAndInvestment(models.Model):
     Title = models.CharField(max_length=200)
     overview = models.TextField()
     Location = models.CharField(max_length=200)
-    LocationFrame = models.TextField(null=True, blank=True)
+    locationFrame = models.TextField(null=True, blank=True)
     Price = models.CharField(max_length=100)
     video_url = models.TextField(null=True)
     Completion_date = models.DateField()

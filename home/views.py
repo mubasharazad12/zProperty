@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from offsure.models import OFFPlanAndInvestment
 from residential.models import ResidentialProperties
-from .models import HomeDashboardSlider
 from Agents.models import Agent
 from Accounts.forms import QuestionForm
 from django.contrib import messages
@@ -13,11 +12,9 @@ from django.db import DataError
 def index(request):
     off_plan_properties = OFFPlanAndInvestment.objects.all().order_by('uploaded_date')
     all_res_properties = ResidentialProperties.objects.all().order_by('uploaded_date')
-    home_dashboard = HomeDashboardSlider.objects.all()
     agents = Agent.objects.all()[:3]
     context = {
         "offplan_all_properties": off_plan_properties,
-        "home_dashboard": home_dashboard,
         "all_res_properties": all_res_properties,
         "agents": agents,
     }
