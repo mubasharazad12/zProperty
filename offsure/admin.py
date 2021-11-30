@@ -22,7 +22,7 @@ class AmenitieInline(admin.TabularInline):
 
 
 class OffPlaneInvesmentInline(admin.ModelAdmin):
-    inlines = [GalleryInline, PaymentPlanInvesmentInline, AmenitieInline, InvestmentPlanInline]
+    inlines = [GalleryInline, AmenitieInline, InvestmentPlanInline, PaymentPlanInvesmentInline]
 
 
 admin.site.register(OFFPlanAndInvestment, OffPlaneInvesmentInline)
